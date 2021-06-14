@@ -1,0 +1,8 @@
+/node_modules
+/var
+/vendor
+/logs
+/data
+.idea
+.DS_Store
+
