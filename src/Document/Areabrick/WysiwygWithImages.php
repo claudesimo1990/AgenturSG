@@ -22,6 +22,6 @@ class WysiwygWithImages extends AbstractAreabrick
      */
     public function getName()
     {
-        return 'WYSIWYG w. Images';
+        return 'wyswygimages';
     }
 }

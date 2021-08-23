@@ -1,14 +1,16 @@
 <?php
 
+
 namespace App\Document\Areabrick;
 
-class Wysiwyg extends AbstractAreabrick
+
+class Block2 extends AbstractAreabrick
 {
     /**
      * {@inheritdoc}
      */
     public function getName()
     {
-        return 'wysiwyg';
+        return 'Image Text';
     }
 }

@@ -3,29 +3,55 @@
     {{ pimcore_head_link() }}
 {% endif %}
 {#footer#}
-<footer class="container py-5">
-    <div class="row">
-        <div class="col-12 col-md">
-            <a class="text-dark text-decoration-none" href="/" >
-                <img id="logo-footer" src="{{ asset('/static/images/logo-dark.svg') }}" >
-                <small class="d-block mb-3  p-3">&copy; {{ "now"|date('Y') }} pimcore GmbH</small>
-            </a>
-        </div>
-        {% if editmode %}
-            <h3 class="float-left">{{ 'Footer Column(s):' }}</h3>
-        {% endif %}
-        {% for i in pimcore_iterate_block(pimcore_block('mainlinkblock')) %}
-            <div class="col-6 col-md">
-                <h5>{{ pimcore_input('mainBlockTitle', {'placeholder': 'Footer Title'}) }}</h5>
-                <ul class="list-unstyled text-small">
-                    {% for i in pimcore_iterate_block(pimcore_block('linkblock')) %}
-                        <li>{{ pimcore_link('myLink', {'class': "text-muted"}) }}</li>
-                    {% endfor %}
-                </ul>
+<footer id="footer">
+    <div class="footer-newsletter">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h4>{{ 'banner_title'|trans }}</h4>
+                    <p>{{ 'banner_text'|trans }}</p>
+                    <form action="" method="post">
+                        <input type="email" name="email"><input type="submit" value="Subscribe">
+                    </form>
+                </div>
             </div>
-            {% if editmode %}
-                <hr />
-            {% endif %}
-        {% endfor %}
+        </div>
+    </div>
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 footer-contact">
+                    <h3>Agentur SG<span>.</span></h3>
+                    <p>
+                        {{ 'firm_street'|trans }} <br>
+                        {{ 'firm_postcode'|trans }}
+                        {{ 'firm_country'|trans }} <br><br>
+                        <strong>Phone:</strong> {{ 'firm_phone'|trans }}<br>
+                        <strong>Email:</strong> {{ 'firm_email'|trans }}<br>
+                    </p>
+                </div>
+                {% if editmode %}
+                    <h3 class="float-left">{{ 'Footer Column(s):' }}</h3>
+                {% endif %}
+                {% for i in pimcore_iterate_block(pimcore_block('mainlinkblock')) %}
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h5>{{ pimcore_input('mainBlockTitle', {'placeholder': 'Footer Title'}) }}</h5>
+                        <ul class="list-unstyled text-small">
+                            {% for i in pimcore_iterate_block(pimcore_block('linkblock')) %}
+                                <li class="bx bx-chevron-right">{{ pimcore_link('myLink', {'class': "text-muted"}) }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% if editmode %}
+                        <hr />
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="container py-4">
+        <div class="copyright">
+            © Copyright <strong><span>Agentur SG</span></strong>. All Rights Reserved
+        </div>
     </div>
 </footer>

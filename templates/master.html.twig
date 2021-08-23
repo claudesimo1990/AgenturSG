@@ -92,8 +92,8 @@
 <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-            <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">contact@example.com</a></i>
-            <i class="bi bi-phone d-flex align-items-center ms-4"><span>+1 5589 55488 55</span></i>
+            <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:{{ 'firm_email'|trans }}">{{ 'firm_email'|trans }}</a></i>
+            <i class="bi bi-phone d-flex align-items-center ms-4"><span>{{ 'firm_phone'|trans }}</span></i>
         </div>
         <div class="social-links d-none d-md-flex align-items-center">
             <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -104,32 +104,32 @@
     </div>
 </section>
 
-<!-- ======= Header ======= -->
-<header id="header" class="d-flex align-items-center">
-    <div class="container d-flex align-items-center justify-content-between">
+    <!-- ======= Header ======= -->
+    <header id="header" class="d-flex align-items-center">
+        <div class="container d-flex align-items-center justify-content-between">
 
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="{{ navStartNode }}" class="logo"><img src="{{ asset('/static/images/logo.svg') }}" alt=""></a>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href="{{ navStartNode }}" class="logo"><img src="{{ asset('/static/images/logo.svg') }}" alt=""></a>
 
-        <nav id="navbar" class="navbar">
-            <ul>
-                {% for page in mainNavigation %}
-                    {% if page.isVisible() and renderer.accept(page) %}
-                        {% if page.hasPages %}
-                            <li><a class="nav-link scrollto" href="{{ page.href }}">{{ page.label|trans }}</a></li>
-                        {% else %}
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ page.href }}">{{ page.label|trans }}</a>
-                            </li>
+            <nav id="navbar" class="navbar">
+                <ul>
+                    {% for page in mainNavigation %}
+                        {% if page.isVisible() and renderer.accept(page) %}
+                            {% if page.hasPages %}
+                                <li><a class="nav-link scrollto" href="{{ page.href }}">{{ page.label|trans }}</a></li>
+                            {% else %}
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ page.href }}">{{ page.label|trans }}</a>
+                                </li>
+                            {% endif %}
                         {% endif %}
-                    {% endif %}
-                {% endfor %}
-            </ul>
-            <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
+                    {% endfor %}
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
 
-    </div>
-</header><!-- End Header -->
+        </div>
+    </header><!-- End Header -->
 
 <main role="main">
     {% for label, messages in app.flashes %}
@@ -173,7 +173,6 @@
                                 'class': 'btn-get-started scrollto'
                             }) %}
                             {{ cLinkButton|raw }}
-                            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
                         </div>
                     </div>
                 </section>
@@ -191,7 +190,7 @@
 </main>
 
 {# include a document-snippet - in this case the footer document #}
-{{ pimcore_inc(document.getProperty('footer')) }}
+{{ pimcore_inc(document.getProperty('Footer')) }}
 
 {# output scripts added before #}
 {% block headscripts deferred %}

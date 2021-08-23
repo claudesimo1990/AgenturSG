@@ -5,7 +5,9 @@
     {% do pimcore_head_meta().setDescription(content.getData(), 160) %}
 {% endif %}
 
-<section class="area-wysiwyg">
+{% include 'includes/settings.html.twig' %}
+
+<section class="{% if pimcore_checkbox('background').isChecked() %} about section-bg {% else%} area-wysiwyg {% endif %}">
     {% pimcoreglossary %}
         {{ content|raw }}
     {% endpimcoreglossary %}
