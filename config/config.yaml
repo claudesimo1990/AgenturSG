@@ -115,6 +115,10 @@ pimcore:
 
 #### SYMFONY OVERRIDES
 framework:
+    # ...
+    # trust *all* requests (the 'REMOTE_ADDR' string is replaced at
+    # run time by $_SERVER['REMOTE_ADDR'])
+    trusted_proxies: '127.0.0.1,REMOTE_ADDR'
 
 #### DEFINE LOCATION OF MANIFEST WHEN WORKING WITH SYMFONY ENCORE
 #    assets:

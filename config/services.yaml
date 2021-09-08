@@ -120,10 +120,10 @@ services:
     App\Twig\Extension\ProductPageExtension:
         tags: ['twig.extension']
 
-    App\Twig\Extension\NewsExtension:
+    App\Twig\Extension\CategoryExtension:
         tags: ['twig.extension']
 
-    App\Twig\Extension\PrintCatalogExtension:
+    App\Twig\Extension\FeaturedPostExtension:
         tags: ['twig.extension']
 
 
